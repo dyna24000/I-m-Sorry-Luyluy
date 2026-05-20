@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A heartfelt interactive apology from an older brother to his little sister.">
+  <title>I'm Sorry, Luyluy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas class="particle-canvas" id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="ambient-vignette" aria-hidden="true"></div>
+
+  <!-- Optional local audio: place your file at assets/music/soft-ambient.mp3 or change this path. -->
+  <audio id="ambientAudio" preload="none" loop src="assets/music/YTDown_YouTube_Media_-5q5mZbe3V8_007_48k.m4a"></audio>
+
+  <header class="site-header" aria-label="Apology page controls">
+    <a class="brand" href="#home" aria-label="Back to the beginning">
+      <span class="brand-mark" aria-hidden="true"></span>
+      For my little sister, Luyluy
+    </a>
+
+    <nav class="nav-links" aria-label="Page sections">
+      <a href="#apology">Apology</a>
+      <a href="#memories">Memories</a>
+      <a href="#forgive">Forgive?</a>
+    </nav>
+
+    <button class="music-toggle" id="musicToggle" type="button" aria-label="Toggle background music" aria-pressed="false">
+      <span class="music-icon" aria-hidden="true"></span>
+      <span id="musicLabel">Music</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="floating-lights" aria-hidden="true">
+        <span style="--delay: 0s; --left: 8%; --size: 18px;"></span>
+        <span style="--delay: 1.2s; --left: 22%; --size: 12px;"></span>
+        <span style="--delay: 2.4s; --left: 41%; --size: 20px;"></span>
+        <span style="--delay: .6s; --left: 64%; --size: 15px;"></span>
+        <span style="--delay: 1.8s; --left: 83%; --size: 22px;"></span>
+      </div>
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">A letter from your older brother</p>
+        <h1 id="hero-title">I'm Sorry, Luyluy</h1>
+        <p class="hero-copy">
+          I know I hurt you. I know an apology does not erase the moment, but I want this page to hold the words I should have said with more care.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-link" href="#apology">Read my heart</a>
+          <a class="ghost-link" href="#memories">Our little memories</a>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#apology" aria-label="Scroll to apology">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="apology section" id="apology" aria-labelledby="apology-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">The words I owe you</p>
+          <h2 id="apology-title">I should have protected your smile, not made it fade.</h2>
+        </div>
+
+        <article class="glass-letter reveal">
+          <p class="typing-text" id="typingText" aria-live="polite"></p>
+          <noscript>
+            I am sorry for making you feel small, unheard, or alone. You are my little sister, my teammate in all the silly memories, and someone I should always treat gently.
+          </noscript>
+        </article>
+      </div>
+    </section>
+
+    <section class="memories section" id="memories" aria-labelledby="memories-title">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Things I never want to forget</p>
+          <h2 id="memories-title">Our story is bigger than one bad moment.</h2>
+        </div>
+
+        <div class="memory-grid" aria-label="Memory gallery placeholders">
+          <article class="memory-card reveal">
+            <div class="memory-image memory-one" role="img" aria-label="Warm placeholder for childhood memories"></div>
+            <h3>The silly fights</h3>
+            <p>The ones that ended in laughter and snacks, because somehow we could never stay serious for long.</p>
+          </article>
+
+          <article class="memory-card reveal">
+            <div class="memory-image memory-two" role="img" aria-label="Warm placeholder for family memories"></div>
+            <h3>Your brave little heart</h3>
+            <p>You have always been softer and stronger than you think. I should have remembered that.</p>
+          </article>
+
+          <article class="memory-card reveal">
+            <div class="memory-image memory-three" role="img" aria-label="Warm placeholder for sibling memories"></div>
+            <h3>The promise</h3>
+            <p>I want to be the brother you can trust again, one patient choice at a time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="forgive section" id="forgive" aria-labelledby="forgive-title">
+      <div class="forgive-panel reveal">
+        <div class="heart-orbit" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <p class="eyebrow">One tiny question</p>
+        <h2 id="forgive-title">Can your annoying older brother try again?</h2>
+        <p class="forgive-copy">
+          No pressure. Just a hopeful button, a nervous button, and a brother who is trying to do better.
+        </p>
+
+        <div class="choice-panel" id="choicePanel">
+          <button class="answer-button yes-button" id="yesButton" type="button">Yes</button>
+          <button class="answer-button no-button" id="noButton" type="button" aria-label="No, but this button keeps moving">No</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="finale section" id="finale" aria-labelledby="finale-title">
+      <div class="final-message" id="finalMessage" hidden>
+        <p class="eyebrow">Thank you</p>
+        <h2 id="finale-title">I will earn that yes with my actions.</h2>
+        <p id="finalTyping" aria-live="polite"></p>
+        <a class="primary-link" href="#home">Start over gently</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
