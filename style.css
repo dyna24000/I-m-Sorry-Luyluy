@@ -418,26 +418,34 @@ h3 {
 .memory-image {
   min-height: 230px;
   border-radius: var(--radius);
+  background-color: rgba(255, 255, 255, 0.28);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
-.memory-one {
-  background:
+.memory-image.memory-one {
+  background-image:
     linear-gradient(to bottom, rgba(255, 248, 239, 0.08), rgba(58, 32, 38, 0.22)),
-    url("assets/images/Our_memory.jpg");
+    url("./assets/images/Our_memory.jpg");
+  background-size: cover, cover;
+  background-position: center, center;
 }
 
-.memory-two {
-  background:
+.memory-image.memory-two {
+  background-image:
     linear-gradient(to bottom, rgba(255, 248, 239, 0.08), rgba(58, 32, 38, 0.22)),
-    url("assets/images/your_brave_heart.jpg");
+    url("./assets/images/your_brave_heart.jpg");
+  background-size: cover, cover;
+  background-position: center, center;
 }
 
-.memory-three {
-  background:
+.memory-image.memory-three {
+  background-image:
     linear-gradient(to bottom, rgba(255, 248, 239, 0.08), rgba(58, 32, 38, 0.22)),
-    url("assets/images/Our+memory2.jpg");
+    url("./assets/images/Our_memory2.jpg");
+  background-size: cover, cover;
+  background-position: center, center;
 }
 
 .forgive-panel {
