@@ -24,12 +24,12 @@ The idea behind this project is to combine sincerity with technology—making it
 ### Installation
 Clone the repository:
 ```bash
-git clone https://github.com/dyna24000/Apologize_interface_forMyLittleSister.git
+git clone https://github.com/dyna24000/I-m-Sorry-Luyluy.git
 ```
 
 Navigate into the project folder:
 ```bash
-cd Apologize_interface_forMyLittleSister
+cd I-m-Sorry-Luyluy
 ```
 
 Open `index.html` in your browser to start using the interface.
